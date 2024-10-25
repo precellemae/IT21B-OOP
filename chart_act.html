@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: pink;
+        }
+        canvas {
+            width: 830px !important; 
+            height: 500px !important; 
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Rose', 'Lily', 'Tulip', 'Sunflower', 'Daisy'],
+            datasets: [{
+              label: 'types of flowers',
+              data: [10, 20, 30, 40, 50],
+              borderWidth: 2,
+              borderColor: 'white', 
+              fill: false, 
+              pointBorderColor: 'white', 
+              pointBorderWidth: 2,
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+    </script>
+</body>
+</html>
